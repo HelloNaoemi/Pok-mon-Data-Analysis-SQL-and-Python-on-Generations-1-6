@@ -96,7 +96,7 @@ plt.suptitle("Pokémon Stats Distribution", fontsize=16)
 plt.tight_layout(rect=[0, 0, 1, 0.96])
 plt.show()
 
-# (4.4) - Legendary vs Non-Legendary: All Stats in One Grid
+# (3.2) - Legendary vs Non-Legendary: All Stats in One Grid
 melted = df.melt(id_vars=["Legendary"], value_vars=stats, var_name="Stat", value_name="Value")
 
 g = sns.FacetGrid(melted, col="Stat", col_wrap=3, hue="Legendary", sharex=False, sharey=False, height=4)
@@ -135,7 +135,7 @@ plt.suptitle("Boxplots of Pokémon Stats by Secondary Type (Type 2)", fontsize=1
 plt.tight_layout(rect=[0, 0, 1, 0.96])
 plt.show()
 
-# (3.6) - Correlation Heatmap
+# (3.4) - Correlation Heatmap
 plt.figure(figsize=(8,6))
 sns.heatmap(df[stats].corr(), annot=True, cmap="coolwarm", center=0)
 plt.title("Correlation Between Pokémon Stats")
@@ -192,4 +192,5 @@ plt.figure(figsize=(10,6))
 legendary_type = pd.crosstab(df["Type 1"], df["Legendary"])
 sns.heatmap(legendary_type, annot=True, fmt="d", cmap="Blues")
 plt.title("Legendary vs Non-Legendary by Type 1")
+
 plt.show()
