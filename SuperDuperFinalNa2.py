@@ -96,7 +96,7 @@ plt.suptitle("Pokémon Stats Distribution", fontsize=16)
 plt.tight_layout(rect=[0, 0, 1, 0.96])
 plt.show()
 
-# (3.2) - Legendary vs Non-Legendary: All Stats in One Grid
+# (3.2) - Density plots for each Pokemon Stat
 melted = df.melt(id_vars=["Legendary"], value_vars=stats, var_name="Stat", value_name="Value")
 
 g = sns.FacetGrid(melted, col="Stat", col_wrap=3, hue="Legendary", sharex=False, sharey=False, height=4)
@@ -194,3 +194,4 @@ sns.heatmap(legendary_type, annot=True, fmt="d", cmap="Blues")
 plt.title("Legendary vs Non-Legendary by Type 1")
 
 plt.show()
+
